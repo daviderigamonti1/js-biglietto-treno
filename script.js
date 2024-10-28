@@ -7,30 +7,37 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 - va applicato uno sconto del 40% per gli over 65.
 - L'output del prezzo finale va messo fuori in forma umana (con massimo due decimali, per indicare centesimi sul prezzo). Questo richiederà un minimo di ricerca.
 
-variabili: numero chilometri, età del passeggero, prezzo biglietto, sconto minorenni, sconto over 65.
-Obiettivo: output prezzo viaggio (max 2 decimali)
 */
+
 console.clear()
 
-/*const priceKm = 0,21
-const discountJunior
-const discountSenior
-const juniorAge = 17
-const seniorAge = 65*/
+//Preparazione
 
 const km = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
 console.log(km);
 const age = parseInt(prompt("Quanti anni ha il passeggero?"));
 console.log(age);
-//prezzo biglietto base
+
+//Prezzo biglietto base
+
 const price = km * 0.21;
-//prezzo ridotto minorenni
-const discountJunior = (price * 0.2);
-const priceJunior = price - discountJunior;
-//prezzo ridotto over 65
-const discountSenior = (price * 0.4);
-const priceSenior = price - discountSenior;
 
+//Condizione
 
-
-
+if (age >= 0 && age < 18) {
+    const discountJunior = (price * 0.2);
+    const priceJunior = price - discountJunior;
+    const priceJuniorFixed = priceJunior.toFixed(2);
+    console.log(priceJuniorFixed);
+} else if (age > 17 && age < 65) {
+    const priceFixed =price.toFixed(2);
+    console.log(priceFixed);
+} else if (age >= 65 && age < 110) {
+    const discountSenior = (price * 0.4);
+    const priceSenior = price - discountSenior;
+    const priceSeniorFixed = priceSenior.toFixed(2);
+    console.log(priceSeniorFixed);
+} else {
+    let text = "Hai sbagliato ad inserire l'età";
+    console.log(text);
+}
