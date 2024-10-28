@@ -10,14 +10,18 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 variabili: numero chilometri, età del passeggero, prezzo biglietto, sconto minorenni, sconto over 65.
 Obiettivo: output prezzo viaggio (max 2 decimali)
 */
+console.clear()
 
-const priceKm = 0,21
+/*const priceKm = 0,21
 const discountJunior
 const discountSenior
 const juniorAge = 17
-const seniorAge = 65
+const seniorAge = 65*/
 
 const km = parseInt(prompt("Quanti chilometri vuoi percorrere?"))
+console.log(km)
 const età = parseInt(prompt("Quanti anni ha il passeggero?"))
+console.log(età)
 const price = km * 0.21
+console.log(price)
 
