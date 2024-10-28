@@ -18,15 +18,19 @@ const discountSenior
 const juniorAge = 17
 const seniorAge = 65*/
 
-const km = parseInt(prompt("Quanti chilometri vuoi percorrere?"))
-console.log(km)
-const età = parseInt(prompt("Quanti anni ha il passeggero?"))
-console.log(età)
+const km = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
+console.log(km);
+const age = parseInt(prompt("Quanti anni ha il passeggero?"));
+console.log(age);
 //prezzo biglietto base
-const price = km * 0.21
+const price = km * 0.21;
 //prezzo ridotto minorenni
-const discountJunior = (price * 0,2)
-const priceJunior = price - discountJunior
+const discountJunior = (price * 0.2);
+const priceJunior = price - discountJunior;
+//prezzo ridotto over 65
+const discountSenior = (price * 0.4);
+const priceSenior = price - discountSenior;
+
 
 
 
