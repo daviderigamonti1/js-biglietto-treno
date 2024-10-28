@@ -22,6 +22,11 @@ const km = parseInt(prompt("Quanti chilometri vuoi percorrere?"))
 console.log(km)
 const età = parseInt(prompt("Quanti anni ha il passeggero?"))
 console.log(età)
+//prezzo biglietto base
 const price = km * 0.21
-console.log(price)
+//prezzo ridotto minorenni
+const discountJunior = (price * 0,2)
+const priceJunior = price - discountJunior
+
+
 
