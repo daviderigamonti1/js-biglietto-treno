@@ -9,35 +9,42 @@ Sulla base di queste informazioni dovrà calcolare il prezzo totale del viaggio,
 
 */
 
-console.clear()
+console.clear();
 
 //Preparazione
 
+//Dati predefiniti
+const priceKm = 0.21;
+const junior = 18;
+const senior = 65;
+
+//Chiedo all'utente età e km da percorrere
 const km = parseInt(prompt("Quanti chilometri vuoi percorrere?"));
 console.log(km);
 const age = parseInt(prompt("Quanti anni ha il passeggero?"));
 console.log(age);
 
-//Prezzo biglietto base
+//Variabile per messaggio finale
+let message;
 
-const price = km * 0.21;
+//Prezzo biglietto base
+const price = km * priceKm;
 
 //Condizione
-
-if (age >= 0 && age < 18) {
+if (age >= 0 && age < junior) {
     const discountJunior = (price * 0.2);
     const priceJunior = price - discountJunior;
-    const priceJuniorFixed = priceJunior.toFixed(2);
-    console.log(priceJuniorFixed);
-} else if (age > 17 && age < 65) {
-    const priceFixed =price.toFixed(2);
-    console.log(priceFixed);
-} else if (age >= 65 && age < 110) {
+    message = `Hai diritto allo sconto Minorenni del 20%! Il prezzo è: ${priceJunior.toFixed(2)}€`;
+} else if (age >= junior && age < senior) {
+    message = `Il prezzo è: ${price.toFixed(2)}€`;
+} else if (age >= senior && age < 110) {
     const discountSenior = (price * 0.4);
     const priceSenior = price - discountSenior;
-    const priceSeniorFixed = priceSenior.toFixed(2);
-    console.log(priceSeniorFixed);
+    message = `Hai diritto allo sconto Senior del 40%! Il prezzo è: ${priceSenior.toFixed(2)}€`;
 } else {
-    let text = "Hai sbagliato ad inserire l'età";
-    console.log(text);
+    message = "Hai sbagliato ad inserire l'età";
+    console.log(message);
 }
+
+//Stampo il messaggio finale
+console.log(message);
